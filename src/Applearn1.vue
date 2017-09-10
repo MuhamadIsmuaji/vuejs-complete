@@ -4,6 +4,7 @@
 			<div class="col-md-12">
 				<app-quote>
 					<h2 slot="title">{{ quoteTitle }}</h2>
+					<!-- <p slot="subtitle">Not default subtitle - content</p> -->
 					<p>A wonderful quote</p>
 				</app-quote>
 			</div>		
