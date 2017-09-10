@@ -1,5 +1,6 @@
 import Vue from 'vue'
 
+// dummy comment
 // learn about slots
 // import Applearn1 from './Applearn1.vue'
 
