@@ -1,53 +1,51 @@
 <template>
 	<div class="container">
-		<app-header-quote :quoteCount="quotes.length" :maxQuotes="maxQuotes"></app-header-quote>
-		<app-new-quote @quoteAdded="quoteAdd"></app-new-quote>
-		<app-quote-grid :quotes="quotes" @quoteDeleted="quoteDelete"></app-quote-grid>
-		<div class="row">
+		<div class="row row-justify">
 			<div class="col-md-12">
-				<div class="alert alert-info">
-					<p class="text-center">Click quote to delete it.</p>
-				</div>
+				<h1 class="text-center">Filters</h1>
+				<p>{{ text | to-uppercase }}</p>
+				<p>{{ text | revText }}</p>
+				<p>{{ text | to-lowercase }}</p>
+				<h1 class="text-center">Chain Filters</h1>
+				<!-- text -> revText -> to-uppercase -->
+				<p>{{ text | revText | to-uppercase }}</p>
+				<hr>
+				<h1 class="text-center">Filters Computed Properties</h1>
+				<!-- data properties in mixin is fresh replicated in each component that use it -->
+				<button @click="fruits.push('new item')">Add item</button>
+				<input type="text" v-model="filterText">
+				<ul>
+					<li v-for="fruit in filterFruit">{{ fruit }}</li>
+				</ul>
 			</div>
 		</div>
+		<app-list></app-list>
 	</div>
 </template>
 
 <script type="text/javascript">
-	import QuoteGrid from './components/Quote/QuoteGrid.vue'
-	import NewQuote from './components/Quote/NewQuote.vue'
-	import HeaderQuote from './components/Quote/HeaderQuote.vue'
+	import List from './List.vue';
+	import { fruitMixin } from './fruitMixin';
 
+	// Filter use to transform some data in the template (only transform the output, not the data property)
 	export default {
-		data: function() {
+		data() {
 			return {
-				quotes: [
-					'The first quotes',
-				],
-				maxQuotes: 10,
+				text : 'Hello there!',
 			}
 		},
-		methods: {
-			quoteAdd(quote) {
-				if (this.quotes.length >= this.maxQuotes) {
-					return alert('Delete quote first!')
-				}
-				this.quotes.push(quote);
+		filters: {
+			// Local filters
+			'to-uppercase': function(value) {
+				return value.toUpperCase();
 			},
-			quoteDelete(index) {
-				this.quotes.splice(index, 1);
+			revText(value) {
+				return value.split('').reverse().join('');
 			}
 		},
 		components: {
-			appQuoteGrid: QuoteGrid,
-			appNewQuote: NewQuote,
-			appHeaderQuote: HeaderQuote,
-		}
+			appList: List,
+		},
+		mixins: [fruitMixin],
 	}
 </script>
-
-<style type="text/css">
-	.row {
-		margin-top: 15px;
-	}
-</style>
