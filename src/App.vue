@@ -4,19 +4,17 @@
 			<div class="col-md-12">
 				<h2 class="text-center">Routing</h2>
 				<hr>
-				<app-header></app-header>
+				<router-view name="header-top"></router-view>
+				<br>
 				<router-view></router-view>
+				<br>
+				<router-view name="header-bottom"></router-view>
 			</div>			
 		</div>
 	</div>
 </template>
 
 <script type="text/javascript">
-	import Header from './components/Header.vue'
-
 	export default {
-		components: {
-			appHeader: Header,
-		}
 	}
 </script>
