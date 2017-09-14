@@ -6,7 +6,9 @@
 				<hr>
 				<router-view name="header-top"></router-view>
 				<br>
-				<router-view></router-view>
+				<transition name="fade" mode="out-in">
+					<router-view></router-view>
+				</transition>
 				<br>
 				<router-view name="header-bottom"></router-view>
 			</div>			
@@ -18,3 +20,22 @@
 	export default {
 	}
 </script>
+
+<style type="text/css">
+	.fade-enter {
+		opacity: 0;
+	}
+
+	.fade-enter-active {
+		transition: opacity 0.5s;
+	}
+
+	.fade-leave {
+
+	}
+
+	.fade-leave-active {
+		transition: opacity 0.5s;
+		opacity: 0;
+	}
+</style>

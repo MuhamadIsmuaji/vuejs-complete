@@ -4,7 +4,9 @@
 		<hr>
 		<button class="btn btn-info" @click="goToHomePage">Go To Homepage</button>
 		<hr>
-		<router-view></router-view>
+		<transition name="fade" mode="out-in">
+			<router-view></router-view>
+		</transition>
 	</div>
 </template>
 
