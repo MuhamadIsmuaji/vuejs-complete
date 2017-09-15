@@ -7,6 +7,7 @@
 
 <script type="text/javascript">
 	import { mapGetters } from 'vuex'
+	import * as types from '../store/types'
 
 	export default {
 		// props: ['counter'],
@@ -23,11 +24,17 @@
 		// 	'doubleCounter', // or can use propertyName: doubleCounter
 		// 	'stringCounter',
 		// ]),
+		// computed: {
+		// 	...mapGetters([ // to combine with our own computed properties
+		// 		'doubleCounter',
+		// 		'stringCounter',
+		// 	])
+		// },
 		computed: {
-			...mapGetters([ // to combine with our own computed properties
-				'doubleCounter',
-				'stringCounter',
-			])
+			...mapGetters({ // to combine with our own computed properties
+				doubleCounter: types.DOUBLE_COUNTER,
+				stringCounter: types.CLICK_COUNTER
+			})
 		},
 	}
 </script>
