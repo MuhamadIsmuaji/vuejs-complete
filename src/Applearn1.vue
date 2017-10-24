@@ -12,20 +12,20 @@
 </template>
 
 <script type="text/javascript">
-	import Quote from './components/Learn1/Quote.vue'
+import Quote from './components/Learn1/Quote.vue'
 
-	export default {
-		data: function() {
-			return {
-				quoteTitle: 'The Quote !',
-			};
-		},
-		components: {
-			appQuote: Quote, 
-		}
+export default {
+	data: function() {
+		return {
+			quoteTitle: 'The Quote !',
+		};
+	},
+	components: {
+		appQuote: Quote, 
 	}
+}
 </script>
 
 <style type="text/css" scoped>
-	
+
 </style>
