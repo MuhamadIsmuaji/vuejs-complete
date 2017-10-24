@@ -81,32 +81,32 @@
 </template>
 
 <script type="text/javascript">
-	import Switch from './components/Learnform/Switch.vue'
+import Switch from './components/Learnform/Switch.vue'
 
-	export default {
-		data() {
-			return {
-				userData: {
-					email: '',
-					password: '',
-					age: 27,
-				},
-				message: 'New message here',
-				sendMail: [],
-				gender: 'Male',
-				selectedPrior: 'Medium',
-				priorities: ['High', 'Medium', 'Low'],
-				dataSwitch: true,
-				isSubmited: false,
-			};
-		},
-		methods: {
-			submited() {
-				this.isSubmited = true;
-			}
-		},
-		components: {
-			appSwitch: Switch,
+export default {
+	data() {
+		return {
+			userData: {
+				email: '',
+				password: '',
+				age: 27,
+			},
+			message: 'New message here',
+			sendMail: [],
+			gender: 'Male',
+			selectedPrior: 'Medium',
+			priorities: ['High', 'Medium', 'Low'],
+			dataSwitch: true,
+			isSubmited: false,
+		};
+	},
+	methods: {
+		submited() {
+			this.isSubmited = true;
 		}
+	},
+	components: {
+		appSwitch: Switch,
 	}
+}
 </script>
