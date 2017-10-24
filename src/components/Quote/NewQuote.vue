@@ -15,17 +15,17 @@
 </template>
 
 <script type="text/javascript">
-	export default {
-		data: function() {
-			return {
-				quote: '',
-			}
-		},
-		methods: {
-			createNew() {
-				this.$emit('quoteAdded', this.quote);
-				this.quote = '';
-			}
+export default {
+	data: function() {
+		return {
+			quote: '',
+		}
+	},
+	methods: {
+		createNew() {
+			this.$emit('quoteAdded', this.quote);
+			this.quote = '';
 		}
 	}
+}
 </script>

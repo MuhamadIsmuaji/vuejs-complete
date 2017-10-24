@@ -9,20 +9,20 @@
 </template>
 
 <script type="text/javascript">
-	
+
 </script>
 
 <style type="text/css" scoped>
-	.card-body {
-		font-size: 24px;
-		color: #6e6e6e;
-	}
+.card-body {
+	font-size: 24px;
+	color: #6e6e6e;
+}
 
-	.quote {
-		cursor: pointer;
-	}
+.quote {
+	cursor: pointer;
+}
 
-	.quote:hover {
-		background-color: #ffe2e2;
-	}
+.quote:hover {
+	background-color: #ffe2e2;
+}
 </style>

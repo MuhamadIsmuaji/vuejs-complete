@@ -12,7 +12,7 @@
 </template>
 
 <script type="text/javascript">
-	export default {
-		props: ['quoteCount', 'maxQuotes'],
-	}
+export default {
+	props: ['quoteCount', 'maxQuotes'],
+}
 </script>

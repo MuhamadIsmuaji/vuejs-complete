@@ -14,40 +14,40 @@
 </template>
 
 <script type="text/javascript">
-	import QuoteGrid from './components/Quote/QuoteGrid.vue'
-	import NewQuote from './components/Quote/NewQuote.vue'
-	import HeaderQuote from './components/Quote/HeaderQuote.vue'
+import QuoteGrid from './components/Quote/QuoteGrid.vue'
+import NewQuote from './components/Quote/NewQuote.vue'
+import HeaderQuote from './components/Quote/HeaderQuote.vue'
 
-	export default {
-		data: function() {
-			return {
-				quotes: [
-					'The first quotes',
-				],
-				maxQuotes: 10,
-			}
-		},
-		methods: {
-			quoteAdd(quote) {
-				if (this.quotes.length >= this.maxQuotes) {
-					return alert('Delete quote first!')
-				}
-				this.quotes.push(quote);
-			},
-			quoteDelete(index) {
-				this.quotes.splice(index, 1);
-			}
-		},
-		components: {
-			appQuoteGrid: QuoteGrid,
-			appNewQuote: NewQuote,
-			appHeaderQuote: HeaderQuote,
+export default {
+	data: function() {
+		return {
+			quotes: [
+			'The first quotes',
+			],
+			maxQuotes: 10,
 		}
+	},
+	methods: {
+		quoteAdd(quote) {
+			if (this.quotes.length >= this.maxQuotes) {
+				return alert('Delete quote first!')
+			}
+			this.quotes.push(quote);
+		},
+		quoteDelete(index) {
+			this.quotes.splice(index, 1);
+		}
+	},
+	components: {
+		appQuoteGrid: QuoteGrid,
+		appNewQuote: NewQuote,
+		appHeaderQuote: HeaderQuote,
 	}
+}
 </script>
 
 <style type="text/css">
-	.row {
-		margin-top: 15px;
-	}
+.row {
+	margin-top: 15px;
+}
 </style>
